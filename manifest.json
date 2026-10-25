@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Wide Stage for YouTube",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Press ` on a YouTube video to fill the tab with the player. Press again to go back.",
   "content_scripts": [
     {
