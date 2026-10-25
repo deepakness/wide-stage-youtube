@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Wide Stage for YouTube",
+  "version": "1.0.0",
+  "description": "Press ` on a YouTube video to fill the tab with the player. Press again to go back.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "css": [
+        "style.css"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

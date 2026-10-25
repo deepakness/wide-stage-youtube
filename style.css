@@ -1,0 +1,65 @@
+html.ws-on body {
+  overflow: hidden !important;
+}
+
+html.ws-on ytd-watch-flexy {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: none !important;
+  max-height: none !important;
+  z-index: 2100 !important;
+  overflow: hidden !important;
+  background: #000 !important;
+}
+
+html.ws-on ytd-watch-flexy #secondary,
+html.ws-on ytd-watch-flexy #secondary-inner,
+html.ws-on ytd-watch-flexy #below,
+html.ws-on ytd-watch-flexy #comments {
+  display: none !important;
+}
+
+html.ws-on ytd-watch-flexy #columns,
+html.ws-on ytd-watch-flexy #primary,
+html.ws-on ytd-watch-flexy #primary-inner,
+html.ws-on ytd-watch-flexy #player-full-bleed-container,
+html.ws-on ytd-watch-flexy #player-container-outer,
+html.ws-on ytd-watch-flexy #player-container-inner,
+html.ws-on ytd-watch-flexy #player,
+html.ws-on ytd-watch-flexy #movie_player {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html.ws-on ytd-watch-flexy #movie_player .html5-video-container,
+html.ws-on ytd-watch-flexy #movie_player video.html5-main-video {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: contain !important;
+}
+
+
+html.ws-on #fixed-side-menu,
+html.ws-on yt-side-rail-view-model {
+  display: none !important;
+}
+
+html.ws-on #movie_player {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 2200 !important;
+}
