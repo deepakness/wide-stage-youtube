@@ -63,3 +63,24 @@ html.ws-on #movie_player {
   height: 100vh !important;
   z-index: 2200 !important;
 }
+
+/* The top bar hides above the stage and slides in with ws-top (see content.js). */
+html.ws-on #masthead-container {
+  z-index: 2300 !important;
+  transform: translateY(-100%) !important;
+  transition: transform 0.15s ease !important;
+}
+
+html.ws-on.ws-top #masthead-container {
+  transform: none !important;
+}
+
+/* On watch pages YouTube fades the bar's background with scroll position, which would leave it see-through over the video. */
+html.ws-on #masthead-container #background {
+  opacity: 1 !important;
+}
+
+/* The guide drawer from the bar's menu button opens over the stage. */
+html.ws-on tp-yt-app-drawer#guide {
+  z-index: 2350 !important;
+}

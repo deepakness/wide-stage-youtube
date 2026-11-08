@@ -5,7 +5,7 @@
 Wide Stage for YouTube is a Manifest V3 extension for Chrome and Firefox. It is a single content script plus CSS on `https://www.youtube.com/*`, with no background script, no extension APIs, no runtime dependencies, and no network access.
 
 - `manifest.json`: shared manifest. The repo root must stay loadable as an unpacked Chrome extension, so keep runtime files at the root.
-- `content.js`: adds the wide stage button before YouTube's fullscreen button, handles the `` ` `` key on watch pages, and toggles the `ws-on` class on `<html>`. YouTube rebuilds its player controls and navigates as a single-page app, so the button is re-added from a MutationObserver and the mode resets on `yt-navigate-finish`.
+- `content.js`: adds the wide stage button before YouTube's fullscreen button, handles the `` ` `` key on watch pages, and toggles the `ws-on` class on `<html>`. YouTube rebuilds its player controls and navigates as a single-page app, so the button is re-added from a MutationObserver and the mode resets on `yt-navigate-finish`. YouTube keeps a hidden `ytd-watch-flexy` after leaving a video, so the watch page check also tests `hidden`. In wide stage it toggles `ws-top` to reveal the top bar on hover, and leaves wide stage on `Esc` or when the cinema mode button or `t` is used. After each switch it re-measures the player while the layout settles, since YouTube sizes its controls only on window resize.
 - `style.css`: all layout for `html.ws-on`.
 - `icons/`: extension icons.
 - `platforms/firefox.json`: top-level manifest keys merged over `manifest.json` for Firefox (add-on ID, minimum version, data collection declaration).
@@ -26,6 +26,7 @@ There is no `package.json` or test runner. Builds need Node and the system `zip`
 - Chrome: **Load unpacked** on the repo root (or `dist/chrome`), reload the extension after edits, then refresh the YouTube tab.
 - Firefox: `about:debugging#/runtime/this-firefox` → **Load Temporary Add-on** → `dist/firefox/manifest.json`.
 - On a watch page, check the `` ` `` key and the player button in both directions, that typing `` ` `` in the search box or a comment does nothing, that the button survives navigating to another video, and that leaving the watch page turns the mode off.
+- In wide stage, check that the top bar slides in at the top edge and hides when the pointer leaves, stays while typing in search or while the guide or an account/notification menu is open, and hides once that menu closes. Check that the cinema mode button and `t` leave wide stage into the matching view, that `Esc` leaves it for the default view but only closes an open menu (top bar, guide, player settings, right-click) or clears search when one is in use, and that the miniplayer (`i`) and fullscreen still work. After leaving wide stage, the player's right-hand buttons (wide stage, fullscreen) must all sit inside the player, including on YouTube's layout with comments in a side panel.
 
 Keep code browser-neutral and put browser differences in `platforms/firefox.json` rather than forking files.
 

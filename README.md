@@ -2,6 +2,8 @@
 
 Chrome and Firefox extension. Press `` ` `` on a YouTube video, or click the wide stage button next to the fullscreen button in the player, to fill the browser tab with the player. Do it again to go back to the normal page. The video keeps its aspect ratio, so it fills the screen when the shape matches and shows bars when it doesn't.
 
+While wide, move the pointer to the top edge to bring up YouTube's top bar (logo, search, account) and move away to hide it. YouTube's cinema mode button and `t` key leave the wide stage and switch the view as usual, and `Esc` leaves it for the default view, like it does for fullscreen.
+
 https://github.com/user-attachments/assets/26598d4e-1c75-4825-a4fe-af2384269a98
 
 ## Install in Chrome
